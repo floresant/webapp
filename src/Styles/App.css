@@ -36,9 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.HeaderLogo, .FooterLogo {
-  height: 2.5vh;
-  pointer-events: none;
-  padding: 5px 5px 5px 5px;
-}

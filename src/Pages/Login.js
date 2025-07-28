@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import { Link, useNavigate, useNavigationType } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { TbLockPassword } from "react-icons/tb";
 import '../Styles/Login.css';
+import '../Styles/App.css';
 
 function Login() {
     const userRef = useRef();
@@ -31,7 +31,7 @@ function Login() {
 
     
     return (
-        <div className="wrapper">
+        <div className="wrapper center">
             <form className="form" onSubmit={handleSubmit}>
                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                 <h1>Login</h1>
