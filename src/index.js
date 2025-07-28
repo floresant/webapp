@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Login from './Pages/Login';
+import Home from './Pages/Home';
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login/>
+  },
+  {
+    path: "home",
+    element: <Home/>
+  },
+
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Header />
     <div className='parent-container'>
-      <Login />
+      <RouterProvider router={router} />
     </div>
     <Footer />
   </React.StrictMode>
