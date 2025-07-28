@@ -1,0 +1,11 @@
+.Footer {
+  background-color: #67093b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+}
+
+.Footer .copyright-text {
+  color: #fff
+}

@@ -1,5 +1,6 @@
 import logo from '../Logo-LongAngle.png';
-import '../App.css';
+import '../Styles/App.css';
+import '../Styles/Footer.css';
 
 function Footer() {
     return (

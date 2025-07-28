@@ -37,26 +37,8 @@
   }
 }
 
-.Header {
-  background-color: #67093b;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-}
-
-.Footer {
-  background-color: #67093b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Footer .copyright-text {
-  color: #fff
-}
-
 .HeaderLogo, .FooterLogo {
-  height: 40px;
+  height: 2.5vh;
   pointer-events: none;
   padding: 5px 5px 5px 5px;
 }
