@@ -30,12 +30,8 @@ body {
 
 .wrapper {
   position: relative;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   height: 90vh;
   background-color: #fff;
-  /* background-color: blue;   */
 }
 
 .wrapper.center {
@@ -46,4 +42,10 @@ body {
 
 .wrapper.top-left {
   display: block;
+}
+
+.page-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
