@@ -38,11 +38,6 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.page-content {
-    flex: 1;
-    padding: 1rem;
-    transition: margin-right 0.3s ease;
-}
 
 .nav-link {
     height: 100%;

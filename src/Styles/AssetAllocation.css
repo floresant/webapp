@@ -1,0 +1,29 @@
+.pie-chart {
+    padding: 0px 10px;
+    background-color: #f7f4f3;
+    width: fit-content;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 400px;
+}
+
+.pie-chart h1 {
+    text-align: center;
+}
+
+.pie-chart p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.show-dollar-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #f7f4f3;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

@@ -18,20 +18,26 @@ html, body, #root {
   height: 100%;
 }
 
-body {
-  height: 90vh;
-}
-
 .HeaderLogo, .FooterLogo {
   height: 2.5vh;
   pointer-events: none;
   padding: 5px 5px 5px 5px;
 }
 
-.wrapper {
+.login-page {
   position: relative;
   height: 90vh;
   background-color: #fff;
+}
+
+.login-page.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  height: 90vh;
 }
 
 .wrapper.center {
@@ -47,5 +53,19 @@ body {
 .page-body {
   display: flex;
   flex: 1;
-  overflow: hidden;
+  overflow: hiden;
+}
+
+.page-content {
+    flex: 1;
+    padding: 1rem;
+    transition: margin-right 0.3s ease;
+}
+
+.page-content.pie-charts{
+    padding: 1rem;
+    transition: margin-right 0.3s ease;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }

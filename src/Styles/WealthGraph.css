@@ -1,0 +1,12 @@
+.wealth-graph {
+    /* padding: 10px; */
+    margin-left: 30px;
+    background-color: #f7f4f3;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.wealth-graph h1 {
+    text-align: center;
+}

@@ -31,7 +31,7 @@ function Login() {
 
     
     return (
-        <div className="wrapper center">
+        <div className="login-page center">
             <form className="form" onSubmit={handleSubmit}>
                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                 <h1>Login</h1>
