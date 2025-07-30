@@ -69,3 +69,49 @@ html, body, #root {
     justify-content: space-evenly;
     align-items: center;
 }
+
+.page-content .stocks-container {
+    /* flex: 1; */
+    width: 100%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    /* padding: 1rem; */
+    transition: margin-right 0.3s ease;
+    background-color: salmon;
+}
+
+.page-content .stocks {
+    /* flex: 1; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* padding: 1rem; */
+    transition: margin-right 0.3s ease;
+    /* background-color: blue; */
+}
+
+.page-content .stock {
+  /* width: fit-content; */
+  width: 550px;
+  /* background-color: salmon; */
+  margin: 10px;
+  /* padding: 15px; */
+}
+
+.page-content .stock-story {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.stock-story .symbol {
+  margin-right: 10px;
+  flex: 0 0 25%;
+}
+
+.stock-story .story {
+  flex: 1;
+}
+

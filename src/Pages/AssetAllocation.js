@@ -1,7 +1,7 @@
 import { useState } from "react";
 import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
-import ToggleSwitch from "../Components/ToggleSwitch";
+import { ToggleSwitch } from "../Components/ToggleSwitch";
 import PortfolioTypeButtons from "../Components/PortfolioTypeButtons";
 import { ClientPieChart, ExamplePieChart } from "../Components/PieCharts";
 import '../Styles/AssetAllocation.css'
@@ -18,8 +18,6 @@ function AssetAllocation() {
   const handleSelection = (portfolio) => {
     setSelectedPortfolio(portfolio)
   }
-
-
   
   return (
     <div className="wrapper">

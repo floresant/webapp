@@ -1,0 +1,21 @@
+.stock-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.stock-form .add-stock {
+    margin: 5px;
+}
+
+.stock-form .remove {
+    margin: 5px;
+}
+
+.stock-form .stories-toggle {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
