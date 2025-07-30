@@ -1,29 +1,24 @@
 import { useState } from "react";
 import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
-import TradingViewSymbolInfo from "../Components/TradingViewSymbolInfo";
-import TradingViewStory from "../Components/TradingViewStory";
-import Checkbox from "@mui/material/Checkbox";
-import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
-import TextField from "@mui/material/TextField";
-import AddIcon from "@mui/icons-material/Add";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import { RegularToggleSwitch } from "../Components/ToggleSwitch";
-import "../Styles/Stocks.css";
+import InvestmentsDisplay from "../Components/InvestmentsDisplay";
 
 function Crypto() {
   const [menuVisible, setMenuVisible] = useState(true);
-  const [stocks, setStocks] = useState({
+  const [cryptos, setCryptos] = useState({
     BTCUSDT: { exchange: "BINANCE", symbol: "BTCUSDT" },
     ETHUSDT: { exchange: "BINANCE", symbol: "ETHUSDT" },
     SOLUSD: { exchange: "COINBASE", symbol: "SOLUSD" },
     ADAUSDT: { exchange: "BINANCE", symbol: "ADAUSDT" },
     AVAXUSD: { exchange: "COINBASE", symbol: "AVAXUSD" },
   });
+  const exchanges = [
+    {id: 1, value: "BINANCE"},
+    {id: 2, value: "COINBASE"},
+    {id: 3, value: "BYBIT"},
+    {id: 4, value: "KRAKEN"},
+    {id: 5, value: "BITSTAMP"},
+  ]
   const [exchangeInput, setExchangeInput] = useState("BINANCE");
   const [symbolInput, setSymbolInput] = useState("");
   const [selectedToRemove, setSelectedToRemove] = useState({});
@@ -32,8 +27,8 @@ function Crypto() {
   const handleAdd = () => {
     const symbol = symbolInput.trim().toUpperCase();
     const exchange = exchangeInput.trim().toUpperCase();
-    if (!symbol || stocks[symbol]) return;
-    setStocks((prev) => ({ ...prev, [symbol]: { exchange, symbol } }));
+    if (!symbol || cryptos[symbol]) return;
+    setCryptos((prev) => ({ ...prev, [symbol]: { exchange, symbol } }));
     setSymbolInput("");
   };
 
@@ -45,7 +40,7 @@ function Crypto() {
   };
 
   const removeSelected = () => {
-    setStocks((prev) => {
+    setCryptos((prev) => {
       const updated = { ...prev };
       Object.keys(selectedToRemove).forEach((symbol) => {
         if (selectedToRemove[symbol]) {
@@ -82,85 +77,7 @@ function Crypto() {
           >
             Cryptocurrencies
           </h2>
-          <div className="stock-form">
-            <div className="add-stock">
-              <FormControl>
-                <InputLabel id="demo-simple-select-label">Crypto Exchange</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={exchangeInput}
-                  label="Crypto Exchange"
-                  size="small"
-                  onChange={(e) => setExchangeInput(e.target.value)}
-                >
-                  <MenuItem value="BINANCE">BINANCE</MenuItem>
-                  <MenuItem value="COINBASE">COINBASE</MenuItem>
-                  <MenuItem value="BYBIT">BYBIT</MenuItem>
-                  <MenuItem value="KRAKEN">KRAKEN</MenuItem>
-                  <MenuItem value="BITSTAMP">BITSTAMP</MenuItem>
-                </Select>
-              </FormControl>
-              <TextField
-                id="outlined-helperText"
-                label="Symbol"
-                defaultValue=""
-                helperText="e.g., BTCUSDT"
-                size="small"
-                value={symbolInput}
-                onChange={(e) => setSymbolInput(e.target.value.toUpperCase())}
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleAdd}
-                startIcon={<AddIcon />}
-                disabled={!symbolInput || stocks[symbolInput]}
-              >
-                Add Cyrpto
-              </Button>
-            </div>
-            <div className="remove">
-              <Button
-                variant="contained"
-                color="error"
-                onClick={removeSelected}
-                startIcon={<DeleteIcon />}
-                disabled={Object.values(selectedToRemove).every((v) => !v)}
-              >
-                Remove
-              </Button>
-            </div>
-            <div className="stories-toggle">
-              <span>Stories {storiesVisible ? "shown" : "hidden"}</span>
-              <RegularToggleSwitch onChange={handleToggle} />
-            </div>
-          </div>
-          <div className="stocks">
-            {Object.entries(stocks).map(([key, { symbol, exchange }]) => (
-              <div className={storiesVisible ? "stock-story" : "stock"} key={symbol}>
-                <Checkbox
-                  onChange={() => toggleSelection(symbol)}
-                  sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
-                />
-                {storiesVisible ? (
-                  <>
-                    <div className="symbol">
-                      <TradingViewSymbolInfo
-                      exchange={exchange}
-                      symbol={symbol}
-                    />
-                    </div>
-                    <div className="story">
-                      <TradingViewStory exchange={exchange} symbol={symbol} />
-                    </div>
-                  </>
-                ) : (
-                  <TradingViewSymbolInfo exchange={exchange} symbol={symbol} />
-                )}
-              </div>
-            ))}
-          </div>
+          <InvestmentsDisplay handleAdd={handleAdd} toggleSelection={toggleSelection} removeSelected={removeSelected} handleToggle={handleToggle} exchangeInput={exchangeInput} setExchangeInput={setExchangeInput} symbolInput={symbolInput} setSymbolInput={setSymbolInput} data={cryptos} selectedToRemove={selectedToRemove} storiesVisible={storiesVisible} exchanges={exchanges} example={"BTCUSDT"}/>
         </div>
       </div>
     </div>

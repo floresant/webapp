@@ -106,12 +106,3 @@ html, body, #root {
   margin-top: 10px;
 }
 
-.stock-story .symbol {
-  margin-right: 10px;
-  flex: 0 0 25%;
-}
-
-.stock-story .story {
-  flex: 1;
-}
-
