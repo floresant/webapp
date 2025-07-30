@@ -5,7 +5,7 @@ function WelcomeBar() {
   return (
     <div className='welcome-bar'>
         <p>Welcome, Anthony</p>
-        <p>Portfolio Balance: $1,000,000.00</p>
+        <p>Portfolio Balance: $100,000,000.00</p>
     </div>
   )
 }

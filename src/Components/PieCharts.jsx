@@ -1,7 +1,7 @@
 import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
 
 const percentFormatter = (item) => `${item.value}%`;
-const dollarFormatter = (item) => `$${item.value}k`;
+const dollarFormatter = (item) => `$${item.value}M`;
 
 const clientData = [
   { label: "US Stock", value: 50 },
@@ -61,7 +61,7 @@ const convertToDollar = (data) => {
 };
 
 const normalize = (n) =>
-  Number.parseFloat(((1e6 * (n / 100)) / 1000).toFixed(0));
+  Number.parseFloat(((100e6 * (n / 100)) / 1e6).toFixed(0));
 
 
 export function ClientPieChart({ dollarVisible }) {

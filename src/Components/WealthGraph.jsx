@@ -4,7 +4,7 @@ import '../Styles/WealthGraph.css';
 function WealthGraph() {
   return (
     <div className="wealth-graph">
-        <h1>Net Worth</h1>
+        <h1>Portfolio Balance</h1>
         <LineChart
             xAxis={[
               {
@@ -28,7 +28,7 @@ function WealthGraph() {
             ]}
             yAxis={[
               {
-                min: (550000),
+                min: (55000000),
                 valueFormatter: (value) =>
                   new Intl.NumberFormat("en-US", {
                     style: "currency",
@@ -40,14 +40,14 @@ function WealthGraph() {
             series={[
               {
                 data: [
-                  600000, // Jan
-                  635000, // Feb
-                  590000, // Mar
-                  710000, // Apr
-                  780000, // May
-                  720000, // Jun
-                  860000, // Jul 1
-                  1000000, // Today
+                  60000000, // Jan
+                  63500000, // Feb
+                  59000000, // Mar
+                  71000000, // Apr
+                  78000000, // May
+                  72000000, // Jun
+                  86000000, // Jul 1
+                  100000000, // Today
                 ],
                 area: true,
                 color: "url(#Gradient)",
