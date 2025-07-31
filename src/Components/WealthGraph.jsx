@@ -3,7 +3,7 @@ import '../Styles/WealthGraph.css';
 
 function WealthGraph() {
   return (
-    <div className="wealth-graph">
+    <div className="wealth-graph card">
         <h1>Portfolio Balance</h1>
         <LineChart
             xAxis={[

@@ -27,17 +27,8 @@ function TradingViewSymbolInfo({ exchange, symbol }) {
   }, [exchange, symbol]);
 
   return (
-    <div className="tradingview-widget-container" ref={container}>
+    <div className="card" ref={container}>
       <div className="tradingview-widget-container__widget"></div>
-      {/* <div className="tradingview-widget-copyright">
-        <a
-          href={`https://www.tradingview.com/symbols/${exchange}-${symbol}/?exchange=${exchange}`}
-          rel="noopener noreferrer nofollow"
-          target="_blank"
-        >
-          <span className="blue-text">{symbol} symbol info by TradingView</span>
-        </a>
-      </div> */}
     </div>
   );
 }

@@ -1,0 +1,42 @@
+.contact-method {
+  background-color: blue;
+  margin: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.contact-method .icons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.icons {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.circle,
+.contact-icon {
+  position: absolute;
+}
+
+.contact-icon {
+  z-index: 2;
+}
+
+.contact-box {
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+
+.contact-box h1 {
+  margin-top: 50px;
+}

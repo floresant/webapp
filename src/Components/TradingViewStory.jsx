@@ -28,17 +28,8 @@ function TradingViewStory({ exchange, symbol }) {
   }, [exchange, symbol]);
 
   return (
-    <div className="tradingview-widget-container" ref={container}>
+    <div className="card" ref={container}>
       <div className="tradingview-widget-container__widget"></div>
-      {/* <div className="tradingview-widget-copyright">
-        <a
-          href="https://www.tradingview.com/news-flow/?priority=top_stories"
-          rel="noopener nofollow"
-          target="_blank"
-        >
-          <span className="blue-text">Top stories by TradingView</span>
-        </a>
-      </div> */}
     </div>
   );
 }
