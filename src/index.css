@@ -20,6 +20,16 @@ body,
   height: 100%;
 }
 
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
 .HeaderLogo,
 .FooterLogo {
   height: 2.5vh;
@@ -39,7 +49,7 @@ body,
   align-items: center;
 }
 
-.wrapper {
+/* .wrapper {
   height: 90vh;
 }
 
@@ -47,10 +57,10 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .wrapper.top-left {
-  display: block;
+  /* display: block; */
 }
 
 .page-body {
@@ -73,33 +83,17 @@ body,
   align-items: center;
 }
 
-.page-content .stocks-container {
-  /* flex: 1; */
-  width: 100%;
-  display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: center;
-  /* padding: 1rem; */
-  transition: margin-right 0.3s ease;
-  background-color: salmon;
-}
 
 .page-content .stocks {
-  /* flex: 1; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* padding: 1rem; */
   transition: margin-right 0.3s ease;
-  /* background-color: blue; */
 }
 
 .page-content .stock {
-  /* width: fit-content; */
   width: 550px;
-  /* background-color: salmon; */
   margin: 10px;
-  /* padding: 15px; */
 }
 
 .page-content .stock-story {
