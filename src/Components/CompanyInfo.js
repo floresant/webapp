@@ -32,7 +32,7 @@ Here's a refresher on what's available to you as a member:
 - Searchable member directory
 - Custom alerts for new deals and events
 - Resource library with recordings, summaries, and expert docs
-- Access everything via your member portal at longangle.com
+- Access everything via your member portal at http://www.longangle.com
 
 🧠 I can help you with:
 - Navigating the member portal
