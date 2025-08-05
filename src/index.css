@@ -27,7 +27,10 @@ body,
 }
 
 .main-content {
-  flex: 1;
+  /* flex: 1; */
+  display: flex;
+  height: 90vh;
+  justify-content: center;
 }
 
 .HeaderLogo,
@@ -49,29 +52,24 @@ body,
   align-items: center;
 }
 
-/* .wrapper {
-  height: 90vh;
-}
-
-.wrapper.center {
+.wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-.wrapper.top-left {
-  /* display: block; */
+  width: 100%;
 }
 
 .page-body {
   display: flex;
-  flex: 1;
-  overflow: hiden;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .page-content {
-  flex: 1;
+  /* flex: 1; */
   padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
   transition: margin-right 0.3s ease;
 }
 

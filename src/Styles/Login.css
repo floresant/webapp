@@ -72,6 +72,10 @@
 }
 
 .login button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
     padding: 10px 40px;
     background-color: #67093b;

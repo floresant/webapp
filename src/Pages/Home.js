@@ -9,12 +9,12 @@ function Home() {
 
   return (
     <div className="wrapper">
-      <WelcomeBar />
+      <SideMenu
+        visible={menuVisible}
+        onToggle={() => setMenuVisible((prev) => !prev)}
+      />
       <div className="page-body">
-        <SideMenu
-          visible={menuVisible}
-          onToggle={() => setMenuVisible((prev) => !prev)}
-        />
+        <WelcomeBar />
         <div className="page-content">
           <WealthGraph />
         </div>

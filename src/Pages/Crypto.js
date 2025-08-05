@@ -57,13 +57,13 @@ function Crypto() {
   };
 
   return (
-    <div className="wrapper-stocks">
-      <WelcomeBar />
-      <div className="page-body">
+    <div className="wrapper">
         <SideMenu
           visible={menuVisible}
           onToggle={() => setMenuVisible((prev) => !prev)}
         />
+      <div className="page-body">
+      <WelcomeBar />
         <div className="page-content">
           <h2
             className="cn-main-title"

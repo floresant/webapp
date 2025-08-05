@@ -94,7 +94,7 @@ function InvestmentsDisplay({
             <div className="symbol">
               <TradingViewSymbolInfo exchange={exchange} symbol={symbol} />
             </div>
-            <div className={storiesVisible ? "story" : "hidden"}>
+            <div className={storiesVisible ? "story" : "hidden-stories"}>
               <TradingViewStory exchange={exchange} symbol={symbol} />
             </div>
           </div>

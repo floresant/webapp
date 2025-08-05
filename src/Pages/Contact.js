@@ -3,8 +3,8 @@ import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 import ContactMethod from "../Components/ContactMethod";
 import CallIcon from "@mui/icons-material/Call";
-import ChatIcon from '@mui/icons-material/Chat';
-import EmailIcon from '@mui/icons-material/Email';
+import ChatIcon from "@mui/icons-material/Chat";
+import EmailIcon from "@mui/icons-material/Email";
 import "../Styles/Contacts.css";
 
 function Contact() {
@@ -16,12 +16,12 @@ function Contact() {
 
   return (
     <div className="wrapper">
-      <WelcomeBar />
+      <SideMenu
+        visible={menuVisible}
+        onToggle={() => setMenuVisible((prev) => !prev)}
+      />
       <div className="page-body">
-        <SideMenu
-          visible={menuVisible}
-          onToggle={() => setMenuVisible((prev) => !prev)}
-        />
+        <WelcomeBar />
         <div className="page-content">
           <h2
             style={{
@@ -61,7 +61,9 @@ function Contact() {
                 <EmailIcon sx={{ fontSize: iconSize, color: iconColor }} />
               }
               header={"Ask a Question"}
-              message={"Fill out our form and we'll get back to you in 24 hours."}
+              message={
+                "Fill out our form and we'll get back to you in 24 hours."
+              }
               buttonText={"Get Started"}
             />
           </div>

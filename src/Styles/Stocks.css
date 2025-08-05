@@ -29,7 +29,7 @@
   flex: 1;
 }
 
-.hidden {
+.hidden-stories {
     display: none;
     transition: width 0.3 ease;
 }

@@ -7,12 +7,12 @@ function IncomeSpending() {
 
   return (
     <div className="wrapper">
-      <WelcomeBar />
-      <div className="page-body">
         <SideMenu
           visible={menuVisible}
           onToggle={() => setMenuVisible((prev) => !prev)}
         />
+      <div className="page-body">
+      <WelcomeBar />
         <div className="page-content">
           <h2
             style={{

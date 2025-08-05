@@ -1,43 +1,97 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { NavLink, useLocation } from "react-router-dom";
-import '../Styles/SideMenu.css';
+import {
+  House,
+  ChartPie,
+  DollarSign,
+  GlobeLock,
+  BookA,
+  ChartLine,
+  Bitcoin,
+  ScrollText,
+  Headset,
+  Settings,
+  LogOut,
+  CircleUserRound,
+  Menu,
+  X,
+} from "lucide-react";
+import "../Styles/SideMenu.css";
 
-
-function SideMenu({ visible, onToggle}) {
-  const menuItems = [
-    { name: "HOME", path: "/home"},
-    { name: "ASSET ALLOCATION", path: "/asset-allocation"},
-    { name: "INCOME & SPENDING", path: "/income-spending"},
-    { name: "PRIVATE MARKET INVESTMENTS", path: "/private-market"},
-    { name: "PRIVATE EQUITY GLOSSARY", path: "/private-equity-glossary"},
-    { name: "STOCKS", path: "/stocks"},
-    { name: "CRYPTOCURRENCIES", path: "/crypto"},
-    { name: "FUTURES", path: "/futures"},
-    { name: "CONTACT US", path: "/contact"},
-    { name: "SETTINGS", path: "/settings"},
-    { name: "LOGOUT", path: "/"}
-  ]
-
+function SideMenu({ visible, onToggle }) {
+  const topMenuItems = [
+    { name: "HOME", icon: <House />, path: "/home" },
+    { name: "ASSET ALLOCATION", icon: <ChartPie />, path: "/asset-allocation" },
+    {
+      name: "INCOME & SPENDING",
+      icon: <DollarSign />,
+      path: "/income-spending",
+    },
+    {
+      name: "PRIVATE MARKET INVESTMENTS",
+      icon: <GlobeLock />,
+      path: "/private-market",
+    },
+    {
+      name: "PRIVATE EQUITY GLOSSARY",
+      icon: <BookA />,
+      path: "/private-equity-glossary",
+    },
+    { name: "STOCKS", icon: <ChartLine />, path: "/stocks" },
+    { name: "CRYPTOCURRENCIES", icon: <Bitcoin />, path: "/crypto" },
+    { name: "FUTURES", icon: <ScrollText />, path: "/futures" },
+    { name: "CONTACT US", icon: <Headset />, path: "/contact" },
+  ];
+  const bottomMenuItems = [
+    { name: "SETTINGS", icon: <Settings />, path: "/settings" },
+    { name: "LOGOUT", icon: <LogOut />, path: "/" },
+  ];
 
   return (
-    <div className='side-menu-wrapper'>
-      <div className={`side-menu ${visible ? '' : 'hidden'}`}>
-        {visible && (menuItems.map((item) => (
-          <NavLink
-          key={item.path}
-          to={item.path}
-          className={({ isActive }) =>(
-            isActive ? "nav-link active" : "nav-link"
-          ) 
-          }
-          >
-            {item.name}
-          </NavLink>
-        )))}
-      </div>
+    <div className="side-menu-wrapper">
       <button className="menu-toggle-btn" onClick={onToggle}>
-        {visible ? '<' : '>'}
+        {visible ? <X /> : <Menu />}
       </button>
+      <div className={`side-menu ${visible ? "" : "hidden"}`}>
+        <div className="side-menu-top">
+          <div className="user">
+            <div className="nav-icon">
+              <CircleUserRound />
+            </div>
+            <div className="greeting">
+              <span>WELCOME,</span>
+              <span>Anthony</span>
+            </div>
+          </div>
+          <hr className="rounded" />
+          {topMenuItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              <div className="nav-icon">{item.icon}</div>
+              {visible && <div className="nav-item">{item.name}</div>}
+            </NavLink>
+          ))}
+        </div>
+        <div className="side-menu-bottom">
+          {bottomMenuItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              <div className="nav-icon">{item.icon}</div>
+              {visible && <div className="nav-item">{item.name}</div>}
+            </NavLink>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
