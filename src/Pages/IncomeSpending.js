@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 
 function IncomeSpending() {
-  const [menuVisible, setMenuVisible] = useState(true);
+  const { menuVisible, setMenuVisible } = useOutletContext();
 
   return (
     <div className="wrapper">

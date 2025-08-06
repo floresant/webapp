@@ -12,10 +12,10 @@ import {
   Headset,
   Settings,
   LogOut,
-  CircleUserRound,
   Menu,
   X,
 } from "lucide-react";
+import User from "./Assets/User.jpg";
 import "../Styles/SideMenu.css";
 
 function SideMenu({ visible, onToggle }) {
@@ -56,7 +56,7 @@ function SideMenu({ visible, onToggle }) {
         <div className="side-menu-top">
           <div className="user">
             <div className="nav-icon">
-              <CircleUserRound />
+              <img src={User} alt="Profile picture" />
             </div>
             <div className="greeting">
               <span>WELCOME,</span>

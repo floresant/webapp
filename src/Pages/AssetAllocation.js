@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 import { ToggleSwitch } from "../Components/ToggleSwitch";
@@ -7,7 +8,8 @@ import { ClientPieChart, ExamplePieChart } from "../Components/PieCharts";
 import "../Styles/AssetAllocation.css";
 
 function AssetAllocation() {
-  const [menuVisible, setMenuVisible] = useState(true);
+  const { menuVisible, setMenuVisible } = useOutletContext();
+
   const [dollarVisible, setDollarVisible] = useState(false);
   const [selectedPortfolio, setSelectedPortfolio] = useState("Aggressive");
 

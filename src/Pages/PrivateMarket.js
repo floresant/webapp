@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 
 function PrivateMarket() {
-  const [menuVisible, setMenuVisible] = useState(true);
+  const { menuVisible, setMenuVisible } = useOutletContext();
 
   return (
     <div className="wrapper">
-        <SideMenu
-          visible={menuVisible}
-          onToggle={() => setMenuVisible((prev) => !prev)}
-        />
+      <SideMenu
+        visible={menuVisible}
+        onToggle={() => setMenuVisible((prev) => !prev)}
+      />
       <div className="page-body">
-      <WelcomeBar />
+        <WelcomeBar />
         <div className="page-content">
           <h2
             style={{

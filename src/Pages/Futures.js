@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 import InvestmentsDisplay from "../Components/InvestmentsDisplay";
 
 function Futures() {
-  const [menuVisible, setMenuVisible] = useState(true);
+  const { menuVisible, setMenuVisible } = useOutletContext();
+
   const [futures, setFutures] = useState({
     "ES!": { exchange: "CME_MINI", symbol: "ES1!" },
     "CL!": { exchange: "NYMEX", symbol: "CL1!" },
@@ -13,12 +15,12 @@ function Futures() {
     "FDAX1!": { exchange: "EUREX", symbol: "FDAX1!" },
   });
   const exchanges = [
-    {id: 1, value: "CME"},
-    {id: 2, value: "NYMEX"},
-    {id: 3, value: "COMEX"},
-    {id: 4, value: "CBOT"},
-    {id: 5, value: "EUREX"},
-  ]
+    { id: 1, value: "CME" },
+    { id: 2, value: "NYMEX" },
+    { id: 3, value: "COMEX" },
+    { id: 4, value: "CBOT" },
+    { id: 5, value: "EUREX" },
+  ];
   const [exchangeInput, setExchangeInput] = useState("CME");
   const [symbolInput, setSymbolInput] = useState("");
   const [selectedToRemove, setSelectedToRemove] = useState({});
@@ -58,12 +60,12 @@ function Futures() {
 
   return (
     <div className="wrapper">
-        <SideMenu
-          visible={menuVisible}
-          onToggle={() => setMenuVisible((prev) => !prev)}
-        />
+      <SideMenu
+        visible={menuVisible}
+        onToggle={() => setMenuVisible((prev) => !prev)}
+      />
       <div className="page-body">
-      <WelcomeBar />
+        <WelcomeBar />
         <div className="page-content">
           <h2
             className="cn-main-title"
@@ -77,7 +79,21 @@ function Futures() {
           >
             Futures
           </h2>
-          <InvestmentsDisplay handleAdd={handleAdd} toggleSelection={toggleSelection} removeSelected={removeSelected} handleToggle={handleToggle} exchangeInput={exchangeInput} setExchangeInput={setExchangeInput} symbolInput={symbolInput} setSymbolInput={setSymbolInput} data={futures} selectedToRemove={selectedToRemove} storiesVisible={storiesVisible} exchanges={exchanges} example={"ES1!"}/>
+          <InvestmentsDisplay
+            handleAdd={handleAdd}
+            toggleSelection={toggleSelection}
+            removeSelected={removeSelected}
+            handleToggle={handleToggle}
+            exchangeInput={exchangeInput}
+            setExchangeInput={setExchangeInput}
+            symbolInput={symbolInput}
+            setSymbolInput={setSymbolInput}
+            data={futures}
+            selectedToRemove={selectedToRemove}
+            storiesVisible={storiesVisible}
+            exchanges={exchanges}
+            example={"ES1!"}
+          />
         </div>
       </div>
     </div>

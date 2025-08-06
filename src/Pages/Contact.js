@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 import ContactMethod from "../Components/ContactMethod";
@@ -8,7 +8,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import "../Styles/Contacts.css";
 
 function Contact() {
-  const [menuVisible, setMenuVisible] = useState(true);
+  const { menuVisible, setMenuVisible } = useOutletContext();
+
   const circleSize = 150;
   const circleColor = "rgb(102, 3, 60)";
   const iconSize = 75;
@@ -21,7 +22,6 @@ function Contact() {
         onToggle={() => setMenuVisible((prev) => !prev)}
       />
       <div className="page-body">
-        <WelcomeBar />
         <div className="page-content">
           <h2
             style={{

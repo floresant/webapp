@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 import InvestmentsDisplay from "../Components/InvestmentsDisplay";
 
 function Stocks() {
-  const [menuVisible, setMenuVisible] = useState(true);
+  const { menuVisible, setMenuVisible } = useOutletContext();
+
   const [stocks, setStocks] = useState({
     MSFT: { exchange: "NASDAQ", symbol: "MSFT" },
     AAPL: { exchange: "NASDAQ", symbol: "AAPL" },
