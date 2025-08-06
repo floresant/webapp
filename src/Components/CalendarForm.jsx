@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import {
   Dialog,
   DialogActions,
@@ -11,7 +11,7 @@ import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
-import { ChromePicker, SketchPicker } from "react-color";
+import { ChromePicker } from "react-color";
 import "../Styles/Calendar.css";
 
 function CalendarForm({

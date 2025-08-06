@@ -3,6 +3,7 @@ import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 import WealthGraph from "../Components/WealthGraph";
 import Calendar from "../Components/Calendar";
+import DiscussionCard from "../Components/DiscussionCard";
 import "../Styles/WelcomeBar.css";
 import "../Styles/Home.css"
 
@@ -20,6 +21,7 @@ function Home() {
         <div className="page-content">
           <div className="calendar">
             <Calendar />
+            <DiscussionCard />
           </div>
           <WealthGraph />
         </div>

@@ -66,7 +66,7 @@ function Calendar() {
             right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
           }}
           eventAdd={true}
-          aspectRatio={1.8}
+          // aspectRatio={2}
           dayMaxEvents={2}
           moreLinkClick={"popover"}
           events={events}
