@@ -3,7 +3,6 @@ import WelcomeBar from "../Components/WelcomeBar";
 import SideMenu from "../Components/SideMenu";
 import InvestmentsDisplay from "../Components/InvestmentsDisplay";
 
-
 function Stocks() {
   const [menuVisible, setMenuVisible] = useState(true);
   const [stocks, setStocks] = useState({
@@ -14,10 +13,10 @@ function Stocks() {
     AMZN: { exchange: "NASDAQ", symbol: "AMZN" },
   });
   const exchanges = [
-    {id: 1, value: "NASDAQ"},
-    {id: 2, value: "NYSE"},
-    {id: 3, value: "AMEX"},
-  ]
+    { id: 1, value: "NASDAQ" },
+    { id: 2, value: "NYSE" },
+    { id: 3, value: "AMEX" },
+  ];
   const [exchangeInput, setExchangeInput] = useState("NASDAQ");
   const [symbolInput, setSymbolInput] = useState("");
   const [selectedToRemove, setSelectedToRemove] = useState({});
@@ -57,12 +56,12 @@ function Stocks() {
 
   return (
     <div className="wrapper">
-        <SideMenu
-          visible={menuVisible}
-          onToggle={() => setMenuVisible((prev) => !prev)}
-        />
+      <SideMenu
+        visible={menuVisible}
+        onToggle={() => setMenuVisible((prev) => !prev)}
+      />
       <div className="page-body">
-      <WelcomeBar />
+        <WelcomeBar />
         <div className="page-content">
           <h2
             className="cn-main-title"
@@ -76,7 +75,21 @@ function Stocks() {
           >
             Stocks
           </h2>
-          <InvestmentsDisplay handleAdd={handleAdd} toggleSelection={toggleSelection} removeSelected={removeSelected} handleToggle={handleToggle} exchangeInput={exchangeInput} setExchangeInput={setExchangeInput} symbolInput={symbolInput} setSymbolInput={setSymbolInput} data={stocks} selectedToRemove={selectedToRemove} storiesVisible={storiesVisible} exchanges={exchanges} example={"AAPL"}/>
+          <InvestmentsDisplay
+            handleAdd={handleAdd}
+            toggleSelection={toggleSelection}
+            removeSelected={removeSelected}
+            handleToggle={handleToggle}
+            exchangeInput={exchangeInput}
+            setExchangeInput={setExchangeInput}
+            symbolInput={symbolInput}
+            setSymbolInput={setSymbolInput}
+            data={stocks}
+            selectedToRemove={selectedToRemove}
+            storiesVisible={storiesVisible}
+            exchanges={exchanges}
+            example={"AAPL"}
+          />
         </div>
       </div>
     </div>

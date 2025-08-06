@@ -10,6 +10,7 @@ import "../Styles/Calendar.css";
 function Calendar() {
   const [events, setEvents] = useState([]);
   const [showWidget, setShowWidget] = useState(false);
+  const [colors, setColors] = useState([]);
 
   const handleDateClick = (arg) => {
     alert(arg.dateStr);
@@ -25,9 +26,9 @@ function Calendar() {
       start: startDate,
       end: endDate,
       description: data.desc,
+      backgroundColor: data.backgroundColor
     };
     setEvents((prev) => [...prev, newEvent]);
-    alert("Event added");
   };
 
   const toggleWidgetOn = () => {
@@ -44,7 +45,7 @@ function Calendar() {
             listPlugin,
           ]}
           initialView="dayGridMonth"
-          dateClick={handleDateClick}
+        //   dateClick={handleDateClick}
           nowIndicator={true}
           customButtons={{
             myCustomButton: {
@@ -69,14 +70,13 @@ function Calendar() {
           dayMaxEvents={2}
           moreLinkClick={"popover"}
           events={events}
-          // eventTimeFormat={}
-          eventDisplay="list-item"
+          eventDisplay="block"
           eventContent={renderEventContent}
         />
       {/* <div className="calendar">
       </div> */}
       <dialog className="calendar-widget">
-        <CalendarForm handleAddEvent={handleAddEvent} showWidget={showWidget} setShowWidget={setShowWidget}/>
+        <CalendarForm handleAddEvent={handleAddEvent} showWidget={showWidget} setShowWidget={setShowWidget} colors={colors} setColors={setColors}/>
       </dialog>
     </div>
   );
@@ -84,10 +84,11 @@ function Calendar() {
 
 function renderEventContent(eventInfo) {
   return (
-    <>
+    <span className="event">
       <span>{eventInfo.timeText}</span>
       <b> {eventInfo.event.title}</b>
-    </>
+      <span>{eventInfo.event.description && eventInfo.event.description}</span>
+    </span>
   );
 }
 
